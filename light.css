@@ -1,0 +1,91 @@
+/* Tema claro: oro + blanco. Se activa añadiendo la clase `light-theme` al elemento <html> */
+
+html.light-theme{
+  --color-bg: rgb(230, 230, 230);
+  --color-text: #0b0b0b;
+  --color-accent: #d4af37;
+  --color-muted: #6b6b6b;
+
+  /* blancos ligeramente más oscuros para mejor legibilidad */
+  --card-bg: #f6f6f6;
+  /* borde dorado más intenso en tema claro */
+  --card-border: rgba(212,175,55,0.32);
+  --panel-bg: #f4f4f4;
+
+  --btn-bg: #ffffff;
+  --btn-color: #0b0b0b;
+  --btn-border: var(--color-accent);
+
+  --demo-bg: rgba(212,175,55,0.14);
+  --demo-color: rgba(31,20,10,0.95);
+}
+
+/* Reglas específicas que complementan overrides de dark.css */
+html.light-theme body{
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.light-theme header{
+  background: rgba(255,255,255,0.85);
+  border-bottom-color: rgba(212,175,55,0.95);
+  color: var(--color-text);
+}
+
+html.light-theme .branding h1{ color: var(--color-text); }
+
+html.light-theme #inicio{ background: var(--panel-bg); }
+html.light-theme #servicios li{
+  background: var(--card-bg);
+  /* borde dorado más grueso y visible */
+  border:1.5px solid var(--color-accent);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  /* glow dorado inferior para destacar sobre fondo claro */
+  box-shadow: 0 10px 28px rgba(212,175,55,0.28), 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* Hover: border y glow dorado más visibles, similar a las tarjetas de precio */
+html.light-theme #servicios li:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 56px rgba(212,175,55,0.46), 0 10px 28px rgba(0,0,0,0.06);
+  border: 2.5px solid var(--color-accent);
+}
+html.light-theme .price-card{
+  background: var(--card-bg);
+  color: var(--color-text);
+  /* borde dorado más grueso y visible */
+  border:1.5px solid var(--color-accent);
+  /* sombra base con glow dorado inferior más marcado */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06), 0 18px 44px rgba(212,175,55,0.32);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, border-width .18s ease;
+}
+html.light-theme .price-card .price{ color:var(--color-accent); }
+html.light-theme .price-card .price-btn{ background:var(--btn-bg); color:var(--btn-color); border:2px solid var(--btn-border); }
+
+/* Hover más intenso con brillo dorado */
+html.light-theme .price-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 28px 72px rgba(212,175,55,0.46), 0 10px 32px rgba(0,0,0,0.06);
+  border: 2.5px solid var(--color-accent);
+}
+
+/* Destacado con hover aún más pronunciado */
+html.light-theme .price-card.destacado:hover{
+  transform: translateY(-12px);
+  box-shadow: 0 40px 110px rgba(212,175,55,0.52), 0 12px 40px rgba(0,0,0,0.06);
+  border: 3.5px solid var(--color-accent);
+}
+html.light-theme .demo-badge{ background:var(--demo-bg); color:var(--demo-color); border-color:var(--color-accent); box-shadow: 0 8px 24px rgba(212,175,55,0.12); }
+
+/* Ajustes para el switch en tema claro (knob contraste) */
+html.light-theme .slider{ background-color:#e6e6e6; }
+html.light-theme .slider:before{ box-shadow: inset 8px -4px 0px 0px #141414; }
+
+/* Footer en tema claro: fondo blanco y texto oscuro */
+html.light-theme footer{
+  background: #ffffff;
+  color: var(--color-text);
+  border-top: 2px solid var(--color-accent);
+}
+
+html.light-theme footer p{ color: var(--color-text); }
